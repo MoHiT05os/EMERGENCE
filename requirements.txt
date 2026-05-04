@@ -1,0 +1,11 @@
+ultralytics
+mediapipe
+opencv-python
+pandas
+numpy
+scikit-learn
+openai
+python-dotenv
+streamlit
+plotly
+openpyxl

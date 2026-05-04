@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (large files)
+*.pt
+
+# Data outputs (regeneratable)
+data/output/module_*.md
+data/**/*.mp4
+data/**/*.avi
+frontend/.next_build/

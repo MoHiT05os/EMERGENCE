@@ -1,0 +1,9 @@
+# ByteTrack tracker config for EMERGENCE
+# Optimized for classroom: students seated, minimal motion between frames
+
+tracker_type: bytetrack
+track_high_thresh: 0.20
+track_low_thresh: 0.05
+new_track_thresh: 0.30
+track_buffer: 120
+match_thresh: 0.85
