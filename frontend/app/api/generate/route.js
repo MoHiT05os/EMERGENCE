@@ -43,6 +43,8 @@ export async function POST(req) {
     // PASS 1: DeepSeek V3 — Raw Generation
     // ==========================================
     const prompt = `You are the EMERGENCE Adaptive Classroom Intelligence Engine. You analyze classroom behavioral data from computer vision (gaze tracking, posture detection, motion analysis) fused with academic test scores to create hyper-personalized learning interventions.
+    
+IMPORTANT CONTEXT: This is a university-level Computer Science class. Ensure all pedagogical recommendations, tips, analogies, and generated curriculum are specifically tailored to Computer Science topics (e.g., algorithms, data structures, coding practices, systems design, debugging).
 
 CLASSROOM DATA SUMMARY:
 - Total students: ${students.length}

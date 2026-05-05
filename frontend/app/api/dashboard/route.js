@@ -25,19 +25,11 @@ const SUBJECTS = {
     day: "Monday",
     faculty: "Dr. Mohit Yadav"
   },
-  "Computer_Core": {
-    testScores: "subjects/Computer_Core_Scores.csv",
-    engagementPrefix: "engagement_log_Computer_Core",
-    columns: { easy: "Test 1 (20)", medium: "Test 2 (20)", hard: "Test 3 (20)" },
-    video: "annotated_Computer_Core.mp4",
-    day: "Wednesday",
-    faculty: "Prof. Sharma"
-  },
-  "Data_Structures": {
-    testScores: "subjects/Data_Structures_Scores.csv",
-    engagementPrefix: "engagement_log_Data_Structures",
-    columns: { easy: "Test 1 (20)", medium: "Test 2 (20)", hard: "Test 3 (20)" },
-    video: "annotated_Data_Structures.mp4",
+  "Technical": {
+    testScores: "subjects/Technical_Scores.csv",
+    engagementPrefix: "engagement_log_Data_Structures", // We reuse this log since no new technical video was provided
+    columns: { easy: "Test (20)", medium: "Viva (20)", hard: "MSE (20)" },
+    video: "annotated_Data_Structures.mp4", // Reusing the friday video
     day: "Friday",
     faculty: "Prof. Gupta"
   }
@@ -117,7 +109,8 @@ export async function GET(req) {
     const cols = subjectConfig.columns;
 
     for (const testRow of testScores) {
-      const gid = testRow["GID"] ? testRow["GID"].trim() : null;
+      let gid = testRow["GID"] ? testRow["GID"].trim() : null;
+      if (gid && gid.endsWith(".0")) gid = gid.replace(".0", "");
       const fullName = testRow["Name"] ? testRow["Name"].trim() : "Unknown Student";
 
       let easy = parseFloat(String(testRow[cols.easy] || "0").replace(/\*/g, "")) || 0;
